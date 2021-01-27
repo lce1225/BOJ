@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		int one, two;
+		int count = 0; // 변수 two가 몇 자리 수 인지
+		Scanner scan = new Scanner(System.in);
+		
+		one = scan.nextInt();
+		two = scan.nextInt();
+		
+		int two_2 = two; //two값 two_2에 저장
+		while(two_2 > 0) {
+			count++;
+			two_2 /= 10;
+		}
+		
+		two_2 = two; //two값 two_2에 다시 저장
+		
+		for(int i = 0; i < count; i++) {
+			int a = two_2 % 10;
+			System.out.println(one * a);
+			two_2 /= 10;	
+		}
+		
+		System.out.println(one * two);
+	}
+
+}
+​
